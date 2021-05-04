@@ -1,0 +1,11 @@
+language: minimal
+
+os: windows
+
+env:
+  - RUST_VERSION=1.38.0
+  - RUST_TRIPLET=x86_64-pc-windows-gnu
+  - RUST_TOOLCHAIN=$RUST_VERSION-$RUST_TRIPLET
+
+script:
+  - curl -LSso /tmp/rustup.sh https://sh.rustup.rs && sh /tmp/rustup.sh -y --default-toolchain "$RUST_TOOLCHAIN" --profile minimal
